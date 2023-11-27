@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,12 @@
     <h1>Car Catalog</h1>
     <ul>
         {% for car in cars %}
-            <li>{{ car.year }} {{ car.make }} {{ car.model }} - ${{ car.price }}</li>
+            <li>
+                {{ car.year }} {{ car.make }} {{ car.model }} - ${{ car.price }}
+                {% if car.image %}
+                    <img src="{{ car.image.url }}" alt="{{ car.make }} {{ car.model }}" style="max-width: 250px; max-height: 200px;">
+                {% endif %}
+            </li>
         {% endfor %}
     </ul>
 </body>
