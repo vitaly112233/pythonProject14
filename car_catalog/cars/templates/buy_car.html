@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ car.make }} {{ car.model }}</title>
+</head>
+<body>
+    <h1>{{ car.make }} {{ car.model }}</h1>
+    <p>Год выпуска: {{ car.year }}</p>
+    <p>Цена: ${{ car.price }}</p>
+    {% if car.image %}
+        <img src="{{ car.image.url }}" alt="{{ car.make }} {{ car.model }}" style="max-width: 500px;">
+    {% endif %}
+
+</body>
+</html>
